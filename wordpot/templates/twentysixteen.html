@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+{% block head %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script>
+		(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);
+		</script>
+<title>{{ config['BLOGTITLE'] }} | Just another WordPress site</title>
+<meta name='robots' content='noindex,follow' />
+<link rel="alternate" type="application/rss+xml" title="{{ config['BLOGTITLE'] }} &raquo; Feed" href="#" />
+<link rel="alternate" type="application/rss+xml" title="{{ config['BLOGTITLE'] }} &raquo; Comments Feed" href="#" />
+	<!--[if lt IE 9]>
+<script src="{{ url_for('static', _external=True, filename='wp-content/themes/'+config['THEME']+'/js/html5.js') }}" type="text/javascript"></script>
+<![endif]-->
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+    <link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', _external=True, filename='wp-content/themes/'+config['THEME']+'/style.css') }}" />
+    <link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??-eJyFkOsKwjAMhV/IWidu+Ed8ll2yLrM3l9Q6n94OJqJOhUBC8uUkHBm9QFvr0ADJPsU5wDDOad3TSv4ChEE1lAxrg/YB184yWJ5Y4yrUIALBUKrUS0KtW+C8IzZAlKCF6etLaC8I8S/WA/uyPokBCG8fqpV2SngdFFqSqVbQuMCidVq7KCM2Cvh9hztIP0ofKskxNUbCKwPY6XbHRudLbpF/GvPd5pk6mkO2K7LNPtsWeX8Hp4iZdw=='></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="#" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="#" />
+</head>
+{% endblock %}
+<body class="home blog custom-background mp6 customizer-styles-applied group-blog hfeed highlander-enabled highlander-light infinite-scroll">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+        {% block header %}
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+
+											<h1 class="site-title">
+                                                <a href="/">{{ config['BLOGTITLE'] }}</a>
+                                            </h1>
+					<p class="site-description">Just another WordPress site</p>
+									</div>
+                <!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">Menu</button>
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+        {% endblock %}
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/hello-world/" rel="bookmark">Hello world!</a></h2>
+	</header><!-- .entry-header -->
+	
+	<div class="entry-content">
+		<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard">
+			<img alt='' src='http://2.gravatar.com/avatar/ed77490fd202e2cfc24a30fc0c88d51c?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ed77490fd202e2cfc24a30fc0c88d51c?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">Author </span> <a class="url fn n" href="/author/admin/">admin</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="/hello-world/" rel="bookmark"><time class="entry-date published updated" datetime="2016-06-07T21:20:24+00:00">June 7, 2016</time></a></span><span class="comments-link"><a href="/hello-world/#comments">1 Comment<span class="screen-reader-text"> on Hello world!</span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="/hello-world/">Hello world!</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">Recent Comments</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>Mr WordPress</a></span> on <a href="/hello-world/#comment-1">Hello world!</a></li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">Archives</h2>		<ul>
+			<li><a href='/2016/06/'>June 2016</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">Meta</h2>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="/" rel="home">Hello World</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+</body>
+</html>
