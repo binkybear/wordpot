@@ -1,2 +1,2 @@
 Flask==0.10.1
--e git+https://github.com/threatstream/hpfeeds/#egg=hpfeeds-dev
+hpfeeds-threatstream==1.1
