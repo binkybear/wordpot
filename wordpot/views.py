@@ -76,6 +76,7 @@ def plugin(plugin, subpath='/'):
 
     return render_template(TEMPLATE, vars={})
 
+
 @app.route('/wp-content/themes/<theme>', methods=['GET', 'POST'])
 @app.route('/wp-content/themes/<theme><regex("(\/.*)"):subpath>', methods=['GET', 'POST'])
 def theme(theme, subpath='/'):
@@ -101,3 +102,25 @@ def theme(theme, subpath='/'):
 
     return render_template(TEMPLATE, vars={}) 
 
+
+@app.route('/phpMyAdmin', methods=['GET', 'POST'])
+@app.route('/phpMyAdmin<regex("\/.*"):subpath>', methods=['GET', 'POST'])
+def phpmyadmin(subpath='/'):
+
+    """ Phpmyadmin probing handler """
+    origin = request.remote_addr
+    LOGGER.info('%s probed for phpmyadmin with path: %s', origin, subpath)
+
+    # Plugins hook
+    for p in pm.hook('phpmyadmin'):
+        p.start(subpath=subpath, request=request)
+        if 'log' in p.outputs:
+            LOGGER.info(p.outputs['log'])
+        if 'log_json' in p.outputs and app.config['HPFEEDS_ENABLED']:
+            app.config['hpfeeds_client'].publish(app.config['HPFEEDS_TOPIC'], p.outputs['log_json'])
+        if 'template' in p.outputs:
+            if 'template_vars' in p.outputs:
+                return render_template(p.outputs['template'], vars=p.outputs['template_vars'])
+            return render_template(p.outputs['template'], vars={})
+
+    return redirect('/phpMyAdmin/index.php')

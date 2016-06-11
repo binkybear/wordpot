@@ -16,6 +16,8 @@ class PluginsManager():
         self.plugins_loaded['themes']   = []
         self.plugins_loaded['admin']    = []
         self.plugins_loaded['commons']  = []
+        self.plugins_loaded['phpmyadmin'] = []
+
         return
 
     def _import_plugin(self, name):
@@ -98,6 +100,7 @@ class BasePlugin(object):
             dest_ip=self.inputs['request'].environ['SERVER_NAME'],
             dest_port=self.inputs['request'].environ['SERVER_PORT'],
             user_agent=self.inputs['request'].user_agent.string,
-            url=self.inputs['request'].url
+            url=self.inputs['request'].url,
+            cookie=self.inputs['request'].cookies
         ))
 
