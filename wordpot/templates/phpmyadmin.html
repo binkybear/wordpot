@@ -1,0 +1,101 @@
+<html>
+<script type="text/javascript">
+// <![CDATA[
+if (typeof(parent.document) != 'undefined' && typeof(parent.document) != 'unknown'
+    && typeof(parent.document.title) == 'string') {
+    parent.document.title = 'phpMyAdmin ';
+}
+// ]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+// show login form in top frame
+if (top != self) {
+    window.top.location.href=location;
+}
+//]]>
+</script>
+</head>
+
+<body class="loginform">
+
+       <div align="center">
+<table style="">
+	<tr>
+		<td>
+<div class="container">
+<img src="{{ url_for('static', _external=True, filename='phpmyadmin/images/pma_logo2.png') }}" id="imLogo" name="imLogo" alt="phpMyAdmin" border="0" />
+<h1>
+    Welcome to <bdo dir="ltr" xml:lang="en">phpMyAdmin </bdo></h1>
+
+<form method="post" action="index.php" target="_parent">
+    <input type="hidden" name="db" value="" /><input type="hidden" name="table" value="" /><input type="hidden" name="lang" value="en" /><input type="hidden" name="collation_connection" value="utf8_general_ci" /><input type="hidden" name="token" value="03a5a5d902185b732c1943bf93dbb1d6" /><fieldset><legend xml:lang="en" dir="ltr">Language</legend>
+    <select name="lang" class="autosubmit" xml:lang="en" dir="ltr">
+            <option value="ar">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577; - Arabic</option>
+        <option value="bg">&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080; - Bulgarian</option>
+        <option value="ca">Catal&agrave; - Catalan</option>
+        <option value="cs">Čeština - Czech</option>
+        <option value="da">Dansk - Danish</option>
+        <option value="de">Deutsch - German</option>
+        <option value="el">&Epsilon;&lambda;&lambda;&eta;&nu;&iota;&kappa;&#940; - Greek</option>
+        <option value="en" selected="selected">English</option>
+        <option value="en_GB">English (United Kingdom)</option>
+        <option value="es">Espa&ntilde;ol - Spanish</option>
+        <option value="et">Eesti - Estonian</option>
+        <option value="fi">Suomi - Finnish</option>
+        <option value="fr">Fran&ccedil;ais - French</option>
+        <option value="gl">Galego - Galician</option>
+        <option value="hi">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368; - Hindi</option>
+        <option value="hr">Hrvatski - Croatian</option>
+        <option value="hu">Magyar - Hungarian</option>
+        <option value="id">Bahasa Indonesia - Indonesian</option>
+        <option value="it">Italiano - Italian</option>
+        <option value="ja">&#26085;&#26412;&#35486; - Japanese</option>
+        <option value="lt">Lietuvi&#371; - Lithuanian</option>
+        <option value="nb">Norsk - Norwegian</option>
+        <option value="nl">Nederlands - Dutch</option>
+        <option value="pl">Polski - Polish</option>
+        <option value="pt">Portugu&ecirc;s - Portuguese</option>
+        <option value="pt_BR">Portugu&ecirc;s - Brazilian portuguese</option>
+        <option value="ro">Rom&acirc;n&#259; - Romanian</option>
+        <option value="ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; - Russian</option>
+        <option value="si">&#3523;&#3538;&#3458;&#3524;&#3517; - Sinhala</option>
+        <option value="sk">Sloven&#269;ina - Slovak</option>
+        <option value="sl">Sloven&scaron;&#269;ina - Slovenian</option>
+        <option value="sr@latin">Srpski - Serbian latin</option>
+        <option value="sv">Svenska - Swedish</option>
+        <option value="tr">T&uuml;rk&ccedil;e - Turkish</option>
+        <option value="uk">&#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072; - Ukrainian</option>
+        <option value="uz">&#1038;&#1079;&#1073;&#1077;&#1082;&#1095;&#1072; - Uzbek-cyrillic</option>
+        <option value="uz@latin">O&lsquo;zbekcha - Uzbek-latin</option>
+        <option value="zh_CN">&#20013;&#25991; - Chinese simplified</option>
+        <option value="zh_TW">&#20013;&#25991; - Chinese traditional</option>
+
+    </select>
+    </fieldset>
+    <noscript>
+    <fieldset class="tblFooters">
+        <input type="submit" value="Go" />
+    </fieldset>
+    </noscript>
+</form>
+    <br />
+<!-- Login form -->
+<form method="post" action="index.php" name="login_form" target="_top" class="login">
+    <fieldset>
+    <legend>Log in</legend>
+        <div class="item">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" value="" size="24" class="textfield"/>
+        </div>
+        <div class="item">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="" size="24" class="textfield" />
+        </div>
+        <input type="hidden" name="server" value="1" />
+    </fieldset>
+    <fieldset class="tblFooters">
+        <input value="Go" type="submit" id="input_go" />
+    <input type="hidden" name="lang" value="en" /><input type="hidden" name="collation_connection" value="utf8_general_ci" /><input type="hidden" name="token" value="03a5a5d902185b732c1943bf93dbb1d6" />    </fieldset>
+</form>
+</html>
